@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database name="default" defaultIdMethod="native" package="src"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://xsd.propelorm.org/1.6/database.xsd">
+      <behavior name="query_cache" />
+      <behavior name="auto_add_pk" />
+      <behavior name="timestampable" />
+
+<table name="event">
+    <column name="date" type="DATE" required="true" />
+    <column name="time" type="TIME" required="true"/>
+    <column name="location" type="VARCHAR" required="true" />
+    <column name="is_public" type="BOOLEAN" required="true" />
+    <column name="is_talk" type="BOOLEAN" required="true" />
+</table>
+
+<table name="talk">
+    <column name="topic" type="VARCHAR" required="false" />
+    <column name="lecturer" type="VARCHAR" required="true" />
+    <column name="summary" type="LONGVARCHAR" required="false" />
+    <column name="is_public" type="BOOLEAN" required="true" />
+    <column name="event_id" type="INTEGER" />
+    
+    <foreign-key foreignTable="event">
+        <reference local="event_id" foreign="id" />
+    </foreign-key>
+</table>
+
+</database>
