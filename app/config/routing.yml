@@ -1,11 +1,9 @@
-symfony_austria_events:
-    resource: "@SymfonyAustriaEventsBundle/Controller/"
-    type:     annotation
+symfonyaustria_events_bundle:
+    resource: "@SymfonyAustriaEventsBundle/Resources/config/routing/routing.yml"
     prefix:   /
 
-symfony_austria_news:
-    resource: "@SymfonyAustriaNewsBundle/Controller/"
-    type:     annotation
+symfonyaustria_news_bundle:
+    resource: "@SymfonyAustriaNewsBundle/Resources/config/routing/routing.yml"
     prefix:   /
 
 # Internal routing configuration to handle ESI
