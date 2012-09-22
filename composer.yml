@@ -1,0 +1,50 @@
+name:           xxx
+description:    xxx
+autoload:
+    psr-0:
+        '': src/
+minimum-stability: dev
+authors:
+  - name:       Gizela
+    email:      cwikiel.g@gmx.net
+
+repositories:
+  - type: composer
+    url: 'http://satis.c33s.net'
+
+require:
+    php:                                                '>=5.3.2'
+    
+    ext-iconv:                                          '*'
+    ext-intl:                                           '*'
+    
+    igorw/composer-yaml:                                dev-master
+    symfony/symfony:                                    2.1.*
+    doctrine/orm:                                       '>=2.2.3,<2.4-dev'
+    doctrine/doctrine-bundle:                           1.0.*
+    twig/extensions:                                    1.0.*
+    symfony/assetic-bundle:                             2.1.*
+    symfony/swiftmailer-bundle:                         2.1.*
+    symfony/monolog-bundle:                             2.1.*
+    sensio/distribution-bundle:                         2.1.*
+    sensio/framework-extra-bundle:                      2.1.*
+    sensio/generator-bundle:                            2.1.*
+    jms/security-extra-bundle:                          1.2.*
+    jms/di-extra-bundle:                                1.1.*
+    propel/propel-bundle:                               1.1.*
+    
+scripts:
+    post-install-cmd:
+        - 'Sensio\Bundle\DistributionBundle\Composer\ScriptHandler::buildBootstrap'
+#        - 'Sensio\Bundle\DistributionBundle\Composer\ScriptHandler::clearCache'
+#        - 'Sensio\Bundle\DistributionBundle\Composer\ScriptHandler::installAssets'
+    post-update-cmd:
+        - 'Sensio\Bundle\DistributionBundle\Composer\ScriptHandler::buildBootstrap'
+#        - 'Sensio\Bundle\DistributionBundle\Composer\ScriptHandler::clearCache'
+#        - 'Sensio\Bundle\DistributionBundle\Composer\ScriptHandler::installAssets'
+config:
+    bin-dir: bin
+
+extra:
+    symfony-app-dir: app
+    symfony-web-dir: web
