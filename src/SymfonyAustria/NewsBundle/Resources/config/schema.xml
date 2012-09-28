@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database name="default" namespace="SymfonyAustria\NewsBundle\Model" defaultIdMethod="native"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://xsd.propelorm.org/1.6/database.xsd">
+      <behavior name="query_cache" />
+      <behavior name="auto_add_pk" />
+      <behavior name="timestampable" />
+      
+      <table name="news">
+          <column name="date" type="DATE" required="true" />
+          <column name="summary" type="LONGVARCHAR" required="true" />
+          <column name="is_public" type="BOOLEAN" required="true" default="true" />
+      </table>    
+  </database>
